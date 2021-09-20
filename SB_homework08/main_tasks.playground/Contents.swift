@@ -55,10 +55,12 @@ struct Person {
     }
 }
 
-// task №3: create class Hero with lifeCount property and hit() method
-// task №4: add to the Hero Class isAlive() property
+// task №3: to create class Hero with lifeCount property and hit() method
+// task №4: to add to the Hero Class isAlive() property
+// task №5: convert var lifeCount to private var
+
 class Hero {
-    var lifeCount: Int
+    private var lifeCount: Int
 
     var isAlive: Bool {
         if lifeCount > 0{
