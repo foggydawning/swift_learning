@@ -54,3 +54,14 @@ struct Person {
         return result
     }
 }
+
+// task №3: create class Hero with lifeCount property and hit() method
+class Hero {
+    var lifeCount: Int
+    init(lifeCount: Int) {
+        self.lifeCount = lifeCount
+    }
+    func hint(){
+        self.lifeCount -= 1
+    }
+}
