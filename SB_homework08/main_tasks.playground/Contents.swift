@@ -56,12 +56,23 @@ struct Person {
 }
 
 // task №3: create class Hero with lifeCount property and hit() method
+// task №4: add to the Hero Class isAlive() property
 class Hero {
     var lifeCount: Int
+
+    var isAlive: Bool {
+        if lifeCount > 0{
+            return true
+        } else{
+            return false
+        }
+    }
+    
     init(lifeCount: Int) {
         self.lifeCount = lifeCount
     }
-    func hint(){
+    
+    func hit(){
         self.lifeCount -= 1
     }
 }
