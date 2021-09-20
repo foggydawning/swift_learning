@@ -2,7 +2,8 @@
 // created by Chub Ilia
 // start date of execution: 20.09.2021
 
-// task №1
+// task №1: create getAgeComparingString func
+// task №2: create getInfo func
 struct Person {
     var name: String
     var age: Int
@@ -26,5 +27,30 @@ struct Person {
         }
         
         return "\(p.name) \(result)"
+    }
+    
+    func getInfo() -> String{
+        "\(self.name) \(self.age) \(checkRussianWordYear())"
+    }
+    
+    private func checkRussianWordYear() -> String{
+        
+        var result: String
+        let lastNumber: Int = self.age % 10
+        
+        if (11...20).contains(self.age){
+            result = "лет"
+        } else {
+            switch lastNumber {
+            case 1:
+                result = "год"
+            
+            case 2...4:
+                result = "года"
+            default:
+                result = "лет"
+            }
+        }
+        return result
     }
 }
