@@ -57,11 +57,8 @@ struct Person {
 // task №3: to create class Hero with lifeCount property and hit() method
 // task №4: to add to the Hero Class isAlive() property
 // task №5: convert the var lifeCount to the private var
-
 class Hero {
     private var lifeCount: Int
-    
-    var basicRecivedDamage: Int = 1
     var isAlive: Bool {
         if lifeCount > 0{
             return true
@@ -75,17 +72,15 @@ class Hero {
     }
     
     func hit(){
-        self.lifeCount -= basicRecivedDamage
+        self.lifeCount -= 1
     }
 }
 
 // task №6: create the class SuperHero from the class Hero
-
 class SuperHero: Hero {
-    
-    private var _basicRecivedDamage: Int = 0
-    override var basicRecivedDamage: Int {
-        get { return _basicRecivedDamage }
-        set { _basicRecivedDamage = newValue }
+    override init(lifeCount: Int) {
+        super.init(lifeCount: lifeCount)
+    }
+    override func hit() {
     }
 }
