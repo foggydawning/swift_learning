@@ -60,11 +60,7 @@ struct Person {
 class Hero {
     private var lifeCount: Int
     var isAlive: Bool {
-        if lifeCount > 0{
-            return true
-        } else{
-            return false
-        }
+        lifeCount > 0
     }
     
     init(lifeCount: Int) {
