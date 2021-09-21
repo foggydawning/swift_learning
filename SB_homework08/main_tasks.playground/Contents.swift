@@ -35,7 +35,7 @@ struct Person {
         "\(self.name) \(self.age) \(checkRussianWordYear())"
     }
     
-    func checkRussianWordYear() -> String{
+    private func checkRussianWordYear() -> String{
         
         var result: String
         let lastNumber: Int = self.age % 10
