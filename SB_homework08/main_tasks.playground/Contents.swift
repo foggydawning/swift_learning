@@ -35,23 +35,20 @@ struct Person {
         "\(self.name) \(self.age) \(checkRussianWordYear())"
     }
     
-    private func checkRussianWordYear() -> String{
+    func checkRussianWordYear() -> String{
         
         var result: String
         let lastNumber: Int = self.age % 10
         
-        if (11...20).contains(self.age){
+        switch lastNumber {
+        case 0,
+             5...9 where self.age > 20 || self.age < 11,
+             0...9 where 11 <= self.age && self.age <= 19:
             result = "лет"
-        } else {
-            switch lastNumber {
-            case 1:
-                result = "год"
-            
-            case 2...4:
-                result = "года"
-            default:
-                result = "лет"
-            }
+        case 1:
+            result = "год"
+        default:
+            result = "года"
         }
         return result
     }
