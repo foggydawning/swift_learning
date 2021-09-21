@@ -11,19 +11,21 @@ struct Person {
  
     func getAgeComparisonString(_ p: Person) -> String {
         // A function for comparing the age of two Person
-        let variantsDict: [String : String] = [
-                                            "older" : "старше меня",
-                                            "younger": "моложе меня",
-                                            "equal": "такого же возраста, как и я"
-                                            ]
+
+        enum textVariants: String{
+            case older = "старше меня"
+            case younger = "моложе меня"
+            case equal = "такого же возраста, как и я"
+        }
+
         var result: String
         
         if p.age > self.age{
-            result = variantsDict["older"]!
+            result = textVariants.older.rawValue
         } else if p.age == self.age{
-            result = variantsDict["equal"]!
+            result = textVariants.equal.rawValue
         } else{
-            result = variantsDict["younger"]!
+            result = textVariants.younger.rawValue
         }
         
         return "\(p.name) \(result)"
